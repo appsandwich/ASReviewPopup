@@ -1,0 +1,17 @@
+Usage:
+
+#import "ASReviewPopup.h"
+
+...
+
+    // Show the popup for every major update of the app
+    [[ASReviewPopup sharedPopup] setPopupFrequency:ASReviewPopupFrequencyMajorVersion];     // You can set this to ASReviewPopupFrequencyAlways to force the alert to always show when testing
+    
+    // Set the number of days to wait before showing the alert
+    [[ASReviewPopup sharedPopup] setNumberOfDaysBeforeShowingPopup:7];
+    
+    // Set the App Store URL - replace the "455519398" with your own app's ID (found in iTunes Connect)
+    [[ASReviewPopup sharedPopup] setAppStoreURL:[NSURL URLWithString:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=455519398"]];
+    
+    // Call to trigger
+    [[ASReviewPopup sharedPopup] showAlertReminderAfterDaysHaveElapsed];
